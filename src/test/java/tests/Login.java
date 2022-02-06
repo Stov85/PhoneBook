@@ -13,7 +13,7 @@ public class Login extends TesteBase {
     public void preCondition() {
         // if logged [logout present???] ---> logout
 
-        if (app.getUserHelper().isLogOutPresent()) {
+        if (app.getUserHelper().isLogged()) {
             app.getUserHelper().logout();
         }
          }

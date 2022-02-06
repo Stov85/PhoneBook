@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ApplicationManager {
     WebDriver wd;
     UserHelper userHelper;
-
+HelperContact contact;
 
     public void init(){
         wd= new ChromeDriver();
@@ -14,12 +14,18 @@ public class ApplicationManager {
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
 
         userHelper = new UserHelper(wd);
+        contact = new HelperContact(wd);
     }
     public void stop(){
         wd.quit();
     }
 
+
     public UserHelper getUserHelper() {
         return userHelper;
+    }
+
+    public HelperContact contact() {
+        return contact;
     }
 }

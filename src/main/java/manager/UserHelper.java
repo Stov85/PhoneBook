@@ -44,13 +44,19 @@ public boolean isLoginSuccess(){
         type(By.cssSelector("[placeholder='Password']"), password);
     }
 
-    public boolean isLogOutPresent() {
-        return isElementPresent(By.xpath("//*[text()='Sign Out']"));
+    public boolean  isLogged(){
+        return wd.findElements(By.xpath("//button[text()='Sign Out']")).size()>0;
     }
+
 
     public void logout() {
         click(By.xpath("//*[text()='Sign Out']"));
     }
 
+    public void login(User user) {
+        openLoginForm();
+        fillLoginForm(user);
+        submitLogin();
+    }
 }
 
