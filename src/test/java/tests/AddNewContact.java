@@ -58,7 +58,7 @@ public class AddNewContact extends TesteBase{
         // if countStart - countEnd = -1
         Assert.assertEquals(countEnd-countStart,1);
         // if list contact with name + phone
-
+//new commit for jenkins
         Assert.assertTrue(app.contact().isContactCreateByName(contact.getName()));
         Assert.assertTrue(app.contact().isContactCreateByPhone(contact.getPhone()));
     }
