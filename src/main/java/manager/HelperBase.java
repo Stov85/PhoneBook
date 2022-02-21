@@ -1,11 +1,17 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HelperBase {
     WebDriver wd;
+    Logger logger = LoggerFactory.getLogger(HelperBase.class);
+
+
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
@@ -20,7 +26,30 @@ public class HelperBase {
         }
 
     }
+    public void type2(By locator) {
 
+        WebElement element = wd.findElement(locator);
+      //  element.click();
+        element.sendKeys(Keys.TAB);
+        pause(1000);
+      // element.sendKeys(Keys.ENTER);
+    }
+    public void type3(By locator) {
+
+        WebElement element = wd.findElement(locator);
+        element.click();
+      //  element.sendKeys(Keys.TAB);
+      pause(1000);
+        element.sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
+        pause(1000);
+        element.sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
+    }
+
+public void zoomout(){
+
+    wd.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
+    wd.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL,Keys.SUBTRACT));
+}
     public void pause(int millis) {
         try {
             Thread.sleep(millis);
