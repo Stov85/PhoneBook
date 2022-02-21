@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.Login" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-20T11:33:35" hostname="DESKTOP-889P2QA" time="3.23">
+  <properties/>
+  <testcase name="loginSuccessTest" classname="tests.Login" time="3.23"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
